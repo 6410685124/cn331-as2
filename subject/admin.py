@@ -4,7 +4,7 @@ from django.contrib import admin
 from .models import Class, Subject, Student
 
 class classAdmin(admin.ModelAdmin):
-    list_display = ('name', 'year', 'semester', 'total_seats', 'remaining_seats')
+    list_display = ('name', 'year', 'semester', 'total_seats', 'remaining_seats','status')
     filter_horizontal = ('students',)
 
 

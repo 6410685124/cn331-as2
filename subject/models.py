@@ -36,9 +36,8 @@ class Class(models.Model):
     year = models.CharField(max_length=10, choices=YEAR_CHOICES)
     semester = models.CharField(max_length=10, choices=SEMESTER_CHOICES)
     students = models.ManyToManyField(Student, related_name='classes')
-    # total_seats = models.PositiveIntegerField(default=0)
-    # remaining_seats = models.PositiveIntegerField(default=99)
     max_seats = models.PositiveIntegerField(default=99)
+    status = models.BooleanField(default=True)
 
     def __str__(self):
         return f"{self.year} - {self.semester} - {self.name}"
