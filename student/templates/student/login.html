@@ -1,15 +1,21 @@
 {% extends 'student/layout.html' %}
 {% block body %}
-
+<div align="center">
+<br>
+<div class=login_box>
 {% if message %}
-    <div>{{ message }}</div>
+    <div class=b>{{ message }}</div>
 {% endif %}
 
 <form action="{% url 'login' %}" method="post">
     {% csrf_token %}
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
+    <input type="text" name="username" placeholder="Username" class=text_box>
+    <br>
+    <input type="password" name="password" placeholder="Password" class=text_box>
+    <br>
     <input type="submit" value="Login">
 </form>
+</div>
+</div>
 
 {% endblock %}
