@@ -1,0 +1,48 @@
+{% extends 'student/layout.html' %}
+{% block body %}
+
+<h1>Welcome, {{request.user.username}}</h1>
+<h3>Registered classes</h3>
+
+{% if registred_class.exists %}
+<table>
+    <tr>
+        <th>Class</th>
+        <th>Remaining_seats</th>
+        <th>Remove class</th>
+    </tr>
+    {% for each_class in registred_class %}
+    <tr>
+        <td>{{each_class.name}}</td>
+        <td>{{each_class.remaining_seats}}</td>
+        <td><a href="{% url 'remove_student' request.user.username each_class.name %}">remove</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No registred class</p>
+{% endif %}
+
+<h3>Available_classes</h3>
+{% if available_class.exists %}
+<table>
+    <tr>
+        <th>Class</th>
+        <th>Remaining_seats</th>
+        <th>Remove class</th>
+    </tr>
+    {% for each_class in available_class %}
+    <tr>
+        <td>{{each_class.name}}</td>
+        <td>{{each_class.remaining_seats}}</td>
+        <td><a href="{% url 'add_student' request.user.username each_class.name %}">add</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No available class</p>
+{% endif %}
+
+<a href="{% url 'logout' %}">Log Out</a>
+
+{% endblock %}
