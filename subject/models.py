@@ -1,5 +1,6 @@
 from collections.abc import Iterable
 from django.db import models
+import datetime
 
 # Create your models here.
 
@@ -33,8 +34,11 @@ class Class(models.Model):
 
     name = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name="subject_name", to_field='code')
     students = models.ManyToManyField(Student, related_name='classes')
-    max_seats = models.PositiveIntegerField(default=99)
-    
+    YEAR_CHOICES = []
+    for r in range(1980, (datetime.datetime.now().year+1)):
+        YEAR_CHOICES.append((r,r))
+
+    year = models.IntegerField(choices=YEAR_CHOICES, default=datetime.datetime.now().year)
     SEMESTER_CHOICES = (
         ('1', '1'),
         ('2', '2'),
@@ -44,7 +48,7 @@ class Class(models.Model):
 
     def __str__(self):
         return f"{self.name}"
-    
+    max_seats = models.PositiveIntegerField(default=99)
     status = models.BooleanField(default=True)
     @property
     def total_seats(self):
