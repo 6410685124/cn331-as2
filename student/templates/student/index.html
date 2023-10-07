@@ -1,12 +1,14 @@
 {% extends 'student/layout.html' %}
 {% block body %}
-
+<div class=box>
 <h1>Welcome, {{request.user.username}}</h1>
+
+<div class=regis_box>
 <h3>Registered classes</h3>
 
 {% if registred_class.exists %}
 <table>
-    <tr>
+    <tr class=regis_table_head>
         <th>Class</th>
         <th>Remaining_seats</th>
         <th>Remove class</th>
@@ -22,11 +24,13 @@
 {% else %}
 <p>No registred class</p>
 {% endif %}
+</div>
 
+<div class=avai_box>
 <h3>Available_classes</h3>
 {% if available_class.exists %}
 <table>
-    <tr>
+    <tr class=avai_table_head>
         <th>Class</th>
         <th>Remaining_seats</th>
         <th>Remove class</th>
@@ -42,7 +46,11 @@
 {% else %}
 <p>No available class</p>
 {% endif %}
+</div>
 
+<div class=button>
 <a href="{% url 'logout' %}">Log Out</a>
+</div>
 
+</div>
 {% endblock %}
