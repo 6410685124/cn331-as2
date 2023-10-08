@@ -1,5 +1,11 @@
-# Python Starter
+## สมาชิกในกลุ่ม
 
-Quickly get started with [Python](https://www.python.org/) using this starter! 
+- พีระชัย เกรียงไกรชัยพร 6410685058
+- ธนากร ทองย้อย 6410615063
+- ธนกฤต อิ้ววังโส 6410685124
 
-- If you want to upgrade Python, you can change the image in the [Dockerfile](./.codesandbox/Dockerfile).
+## ฟีเจอร์
+
+- ระบบสามารถแยกการเข้าสู่ระบบเป้น user(student) กับ admin
+- Admin สามารถจัดการกับรายวิชา, นักเรียน และคลาสได้
+- Students สามารถเลือกดูรายวิชาที่เปิดให้ขอโควต้าและกดขอโควต้าได้รวมถึงสามารถถอนรายวิชาที่ถอนโควต้าไว้ได้
