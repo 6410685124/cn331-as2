@@ -1,23 +1,28 @@
 {% extends 'student/layout.html' %}
 {% block body %}
+<div align="center">
 <div class=box>
+    <!--
 <h1>Welcome, {{request.user.username}}</h1>
-
+-->
+<h1 align="left">Welcome, {{student.first_name}} {{student.last_name}} </h1>
 <div class=regis_box>
 <h3>Registered classes</h3>
 
 {% if registred_class.exists %}
 <table>
     <tr class=regis_table_head>
-        <th>Class</th>
-        <th>Remaining_seats</th>
-        <th>Remove class</th>
+        <th class=table1>Class</th>
+        <th class=table2>Subject</th>
+        <th class=table3>Remaining seats</th>
+        <th class=table4>Remove class</th>
     </tr>
     {% for each_class in registred_class %}
     <tr>
-        <td>{{each_class.name}}</td>
-        <td>{{each_class.remaining_seats}}</td>
-        <td><a href="{% url 'remove_student' request.user.username each_class.name %}">remove</a></td>
+        <td class=table1>{{each_class.name}}</td>
+        <td class=table2>{{each_class.name.name}}</td>
+        <td class=table3>{{each_class.remaining_seats}}</td>
+        <td class=table4><a href="{% url 'remove_student' request.user.username each_class.name %}">remove</a></td>
     </tr>
     {% endfor %}
 </table>
@@ -27,19 +32,21 @@
 </div>
 
 <div class=avai_box>
-<h3>Available_classes</h3>
+<h3>Available classes</h3>
 {% if available_class.exists %}
 <table>
     <tr class=avai_table_head>
-        <th>Class</th>
-        <th>Remaining_seats</th>
-        <th>Remove class</th>
+        <th class=table1>Class</th>
+        <th class=table2>Subject</th>
+        <th class=table3>Remaining seats</th>
+        <th class=table4>Remove class</th>
     </tr>
     {% for each_class in available_class %}
     <tr>
-        <td>{{each_class.name}}</td>
-        <td>{{each_class.remaining_seats}}</td>
-        <td><a href="{% url 'add_student' request.user.username each_class.name %}">add</a></td>
+        <td class=table1>{{each_class.name}}</td>
+        <td class=table2>{{each_class.name.name}}</td>
+        <td class=table3>{{each_class.remaining_seats}}</td>
+        <td class=table4><a href="{% url 'add_student' request.user.username each_class.name %}">add</a></td>
     </tr>
     {% endfor %}
 </table>
@@ -51,6 +58,6 @@
 <div class=button>
 <a href="{% url 'logout' %}">Log Out</a>
 </div>
-
+</div>
 </div>
 {% endblock %}
