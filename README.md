@@ -9,3 +9,6 @@
 - ระบบสามารถแยกการเข้าสู่ระบบเป้น user(student) กับ admin
 - Admin สามารถจัดการกับรายวิชา, นักเรียน และคลาสได้
 - Students สามารถเลือกดูรายวิชาที่เปิดให้ขอโควต้าและกดขอโควต้าได้รวมถึงสามารถถอนรายวิชาที่ถอนโควต้าไว้ได้
+
+## video
+- https://drive.google.com/file/d/1KS3MgDw6c-FRcW-NgsjHpGT34xyatjpp/view?usp=sharing
