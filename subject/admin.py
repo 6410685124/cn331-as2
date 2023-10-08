@@ -4,13 +4,16 @@ from django.contrib import admin
 from .models import Class, Subject, Student
 
 class classAdmin(admin.ModelAdmin):
-    list_display = ('name', 'year', 'semester', 'total_seats', 'remaining_seats')
+    list_display = ('name', 'total_seats', 'remaining_seats', 'semester', 'status')
     filter_horizontal = ('students',)
 
 
 class StudentAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'student_id')
+    list_display = ('student_id', 'first_name', 'last_name', 'year')
+
+class SubjectAdmin(admin.ModelAdmin):
+    list_display = ('code', 'name')
 
 admin.site.register(Class, classAdmin)
-admin.site.register(Subject)
+admin.site.register(Subject, SubjectAdmin)
 admin.site.register(Student, StudentAdmin)
