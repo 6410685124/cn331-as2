@@ -10,5 +10,7 @@
 - Admin สามารถจัดการกับรายวิชา, นักเรียน และคลาสได้
 - Students สามารถเลือกดูรายวิชาที่เปิดให้ขอโควต้าและกดขอโควต้าได้รวมถึงสามารถถอนรายวิชาที่ถอนโควต้าไว้ได้
 
-## video
-- https://drive.google.com/file/d/1KS3MgDw6c-FRcW-NgsjHpGT34xyatjpp/view?usp=sharing
+## videos
+- [ลิงค์ตัวอย่างการใช้งาน](https://drive.google.com/file/d/1KS3MgDw6c-FRcW-NgsjHpGT34xyatjpp/view?usp=sharing)
+- [ลิงค์ตัวอย่างการใช้งาน (บน clound)]()
+- [ลิงค์ web app บนcloud](https://6410685058.pythonanywhere.com/student/)
